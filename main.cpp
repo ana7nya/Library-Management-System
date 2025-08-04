@@ -63,9 +63,9 @@ void addBook() {
         out << b.id << "|" << b.title << "|" << b.author << "|" << b.publisher
             << "|" << b.genre << "|" << b.price << "|" << b.quantity << "\n";
         out.close();
-        cout << "\n✅ Book added successfully!\n";
+        cout << "\n Book added successfully!\n";
     } else {
-        cout << "\n❌ Error opening file.\n";
+        cout << "\n Error opening file.\n";
     }
 }
 
@@ -80,7 +80,7 @@ void viewBooks() {
     Book b;
     string line;
 
-    cout << "\n📚 All Books:\n";
+    cout << "\n All Books:\n";
     cout << left << setw(6) << "ID" << setw(25) << "Title" << setw(20) << "Author"
          << setw(20) << "Publisher" << setw(10) << "Genre" << setw(8) << "Price"
          << setw(6) << "Qty" << "\n";
@@ -143,7 +143,7 @@ void searchBook() {
         b.quantity = stoi(quantityStr);
 
         if (b.id == targetID) {
-            cout << "\n📘 Book Found:\n";
+            cout << "\n Book Found:\n";
             b.display();
             found = true;
             break;
@@ -151,7 +151,7 @@ void searchBook() {
     }
 
     if (!found)
-        cout << "\n❌ Book ID not found.\n";
+        cout << "\n Book ID not found.\n";
 
     in.close();
 }
@@ -193,9 +193,9 @@ void deleteBook() {
     rename("temp.txt", "books.txt");
 
     if (deleted)
-        cout << "\n✅ Book deleted successfully!\n";
+        cout << "\n Book deleted successfully!\n";
     else
-        cout << "\n❌ Book not found.\n";
+        cout << "\n Book not found.\n";
 }
 
 //Login function
@@ -207,7 +207,7 @@ bool login() {
     string storedUser, storedPass;
     bool success = false;
 
-    cout << "\n===== 🔐 Admin Login =====\n";
+    cout << "\n=====  Admin Login =====\n";
     cout << "Username: ";
     cin >> username;
     cout << "Password: ";
@@ -230,10 +230,10 @@ bool login() {
     file.close();
 
     if (success) {
-        cout << "\n✅ Login successful. Welcome, " << username << "!\n";
+        cout << "\n Login successful. Welcome, " << username << "!\n";
         return true;
     } else {
-        cout << "\n❌ Login failed. Incorrect username or password.\n";
+        cout << "\n Login failed. Incorrect username or password.\n";
         return false;
     }
 }
@@ -421,7 +421,7 @@ void returnBook() {
 
 void printMenu() {
     cout << "\n====================================\n";
-    cout << "      📚 Library Management System 📚      \n";
+    cout << "       Library Management System       \n";
     cout << "====================================\n";
     cout << "1. Add Book\n";
     cout << "2. View All Books\n";
@@ -449,10 +449,10 @@ int getChoice() {
             if (choice >= 1 && choice <= 7) {
                 break;                     // valid choice
             } else {
-                cout << "❗ Please enter a valid choice (1-7): ";
+                cout << " Please enter a valid choice (1-7): ";
             }
         } else {
-            cout << "❗ Invalid input. Please enter a number: ";
+            cout << " Invalid input. Please enter a number: ";
             cin.clear();                   // clear error flags
             cin.ignore(numeric_limits<streamsize>::max(), '\n');  // discard bad input
         }
@@ -528,7 +528,7 @@ int main() {
         case 2: viewBooks(); break;
         case 3: searchBook(); break;
         case 4: deleteBook(); break;
-        case 5: cout << "\n👋 Exiting...\n"; break;
+        case 5: cout << "\n Exiting...\n"; break;
         case 6: issueBook(); break;
         case 7: returnBook(); break;
         default: cout << "\n❗ Invalid choice. Try again.\n";
@@ -542,3 +542,4 @@ int main() {
 
     return 0;
 }
+
